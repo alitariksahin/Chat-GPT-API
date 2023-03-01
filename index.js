@@ -16,7 +16,8 @@ app.post("/", async (req, res, next) => {
     const output = await chat(input);
     res.status(200).json({output: output});
   }catch(err) {
-    res.status(500).json({msg: "Something is wrong with ChatGPT, please try again later."})
+    next(err);
+   // res.status(500).json({msg: "Something is wrong with ChatGPT, please try again later."})
   }
     
 })
