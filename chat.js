@@ -9,9 +9,15 @@ const chat = async (input) => {
         puppeteer.launch({ headless: "new",
           executablePath:process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(),
        args: [
-        "--disabled-setuid-sandbox",
-        "--no-sandbox",
-        "--no-zygote"
+        '--disable-gpu',
+        '--disable-dev-shm-usage',
+        '--disable-setuid-sandbox',
+        '--no-first-run',
+        '--no-sandbox',
+        '--no-zygote',
+        '--deterministic-fetch',
+        '--disable-features=IsolateOrigins',
+        '--disable-site-isolation-trials'
       ],
       ignoreDefaultArgs: ['--disable-extensions']
       }).then(async browser => {
@@ -29,6 +35,7 @@ const chat = async (input) => {
            const cookies = JSON.parse(cookiesString);
            await page.setCookie(...cookies);
             await page.goto('https://chat.openai.com/chat', {waitUntil: "networkidle2"}) 
+            console.log("on the site");
             await page.setDefaultTimeout(0);
             
             await page.waitForSelector("textarea", {visible: true});
