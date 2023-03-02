@@ -10,7 +10,7 @@ const chat = async (input) => {
           executablePath:process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(),
            userDataDir: "./tmp",
        args: [
-        "--disable-setuid-sandbox",
+        "--disabled-setuid-sandbox",
         "--no-sandbox",
         "--no-zygote"
       ] 
