@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const chat = require("./controllers/chat");
+const chat = require("./chat");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
