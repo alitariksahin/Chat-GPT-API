@@ -13,7 +13,8 @@ const chat = async (input) => {
         "--disabled-setuid-sandbox",
         "--no-sandbox",
         "--no-zygote"
-      ] 
+      ],
+      ignoreDefaultArgs: ['--disable-extensions']
       }).then(async browser => {
             const page = await browser.newPage()
             await page.setViewport({
