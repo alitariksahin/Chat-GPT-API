@@ -11,7 +11,6 @@ const chat = async (input) => {
        args: [
         "--disabled-setuid-sandbox",
         "--no-sandbox",
-        "--single-process",
         "--no-zygote"
       ],
       ignoreDefaultArgs: ['--disable-extensions']
