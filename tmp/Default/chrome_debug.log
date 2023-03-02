@@ -1,0 +1,22 @@
+[0302/201300.054:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
+[0302/201301.153:INFO:CONSOLE(3)] "Request for the Private Access Token challenge.", source:  (3)
+[0302/201301.153:INFO:CONSOLE(3)] "The next request for the Private Access Token challenge may return a 401 and show a warning in console.", source:  (3)
+[0302/201301.206:INFO:CONSOLE(3)] "console.groupEnd", source:  (3)
+[0302/201315.542:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201315.542:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 1 time(s)
+[0302/201315.764:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 104 ms
+[0302/201318.288:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201318.288:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 2 time(s)
+[0302/201318.529:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 107 ms
+[0302/201322.476:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201322.476:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 3 time(s)
+[0302/201322.715:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 104 ms
+[0302/201323.472:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201323.472:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 4 time(s)
+[0302/201323.720:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 114 ms
+[0302/201324.596:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201324.596:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 5 time(s)
+[0302/201324.835:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 114 ms
+[0302/201325.361:ERROR:gpu_process_host.cc(952)] GPU process exited unexpectedly: exit_code=-36862
+[0302/201325.361:WARNING:gpu_process_host.cc(1302)] The GPU process has crashed 6 time(s)
+[0302/201325.508:WARNING:gpu_process_host.cc(975)] Reinitialized the GPU process after a crash. The reported initialization time was 0 ms

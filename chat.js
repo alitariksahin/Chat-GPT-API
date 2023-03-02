@@ -6,24 +6,25 @@ puppeteer.use(StealthPlugin());
 
 const chat = async (input) => {
     return new Promise((resolve) => {
-        puppeteer.launch({ headless: "new",  executablePath:process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(), userDataDir: "./tmp",
-      args: [
+        puppeteer.launch({ headless: "new",
+          executablePath:process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(),
+           userDataDir: "./tmp",
+       args: [
         "--disable-setuid-sandbox",
         "--no-sandbox",
-        "--single-process",
         "--no-zygote"
-      ]
+      ] 
       }).then(async browser => {
             const page = await browser.newPage()
-           await page.setViewport({
+            await page.setViewport({
               width: 1920 + Math.floor(Math.random() * 100),
               height: 3000 + Math.floor(Math.random() * 100),
               deviceScaleFactor: 1,
               hasTouch: false,
               isLandscape: false,
               isMobile: false,
-          }); 
-          await page.setJavaScriptEnabled(true);
+          });  
+           await page.setJavaScriptEnabled(true);
             await page.goto('https://chat.openai.com/chat', {waitUntil: "networkidle2"}) 
             await page.setDefaultTimeout(0);
             await page.waitForSelector("textarea", {visible: true});
@@ -38,7 +39,7 @@ const chat = async (input) => {
                 return res.join("\n");
               })
             await browser.close();
-            resolve(response);
+            resolve(response); 
           })
     })
     
