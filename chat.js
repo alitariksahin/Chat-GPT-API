@@ -6,7 +6,14 @@ puppeteer.use(StealthPlugin());
 
 const chat = async (input) => {
     return new Promise((resolve) => {
-        puppeteer.launch({ headless: "new", executablePath: executablePath(), userDataDir: "./tmp"}).then(async browser => {
+        puppeteer.launch({ headless: "new",  executablePath:process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(), userDataDir: "./tmp",
+      args: [
+        "--disable-setuid-sandbox",
+        "--no-sandbox",
+        "--single-process",
+        "--no-zygote"
+      ]
+      }).then(async browser => {
             const page = await browser.newPage()
            await page.setViewport({
               width: 1920 + Math.floor(Math.random() * 100),
