@@ -2,16 +2,15 @@ const puppeteer = require('puppeteer-extra')
 const {executablePath} = require('puppeteer')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 require("dotenv").config()
-const path = require("path")
 
 puppeteer.use(StealthPlugin());
 
 const chat = async (input) => {
     return new Promise((resolve) => {
         puppeteer.launch({
-          headless: false,
+          headless: "new",
           executablePath:(process.env.NODE_ENV === "production")? process.env.PUPPETEER_EXECUTABLE_PATH : executablePath(),
-          userDataDir: path.resolve(__dirname, './tmp'),
+          userDataDir: './tmp',
           args: [
             "--disable-setuid-sandbox",
             "--no-sandbox",
