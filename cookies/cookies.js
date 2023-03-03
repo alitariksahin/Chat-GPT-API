@@ -21,6 +21,7 @@ const login = async (email, password) => {
     await page.waitForSelector(".h-4.w-4.mr-1", {visible: true});
     const cookies = await page.cookies();
     await fs.writeFile("./cookies/cookies.json", JSON.stringify(cookies, null, 2));
+    console.log("Cookies are ready");
     await browser.close();
 }
 
