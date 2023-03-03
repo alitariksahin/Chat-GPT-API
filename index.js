@@ -1,36 +1,21 @@
-const express = require("express");
-const app = express();
-const chat = require("./chat");
-
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-
-
-app.get("/", (req,res) => {
-    res.status(200).json({msg: "ChatGPT API is ready to use"});
-});
-
-app.post("/", async (req, res, next) => {
-  try {
-    const input = req.body.input;
-    const output = await chat(input);
-    res.status(200).json({output: output});
-  }catch(err) {
-    next(err);
-   // res.status(500).json({msg: "Something is wrong with ChatGPT, please try again later."})
-  }
-    
-})
-
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`listening on port ${PORT}`);
-});
+const login = require("./cookies/cookies");
+const chat = require("./controller/chat");
 
 
 
+const start = async () => {
+    try {
+        const email = "example@gmail.com"; // type your email with which you registered chatGPT.
+        const password = "123456"; // type your password with which you registered chatGPT.
+        await login(email , password); // Once you login you can comment this line out.
+        
+        const input = "write me an acrostic poem with the letters of chatgpt"; //here your input goes.
+        const output = await chat(input);
+        console.log(output);
 
+    } catch (error) {
+        console.log(error);
+    }
+}
 
-
+start();
