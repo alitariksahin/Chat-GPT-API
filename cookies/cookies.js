@@ -6,7 +6,7 @@ const fs = require("fs").promises
 puppeteer.use(StealthPlugin());
 
 const login = async (email, password) => {
-    const browser = await puppeteer.launch({headless: "new", executablePath: executablePath()});
+    const browser = await puppeteer.launch({headless: false, executablePath: executablePath()});
     const page = await browser.newPage();
     await page.goto('https://chat.openai.com/chat');
     await page.setDefaultTimeout(0);

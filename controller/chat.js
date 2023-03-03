@@ -6,7 +6,7 @@ puppeteer.use(StealthPlugin());
 
 const chat = async (input) => {
     return new Promise((resolve) => {
-        puppeteer.launch({ headless: false, executablePath: executablePath()
+        puppeteer.launch({ headless: "new", executablePath: executablePath()
       }).then(async browser => {
             const page = await browser.newPage()
              await page.setViewport({
