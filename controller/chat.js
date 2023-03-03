@@ -6,7 +6,7 @@ puppeteer.use(StealthPlugin());
 
 const chat = async (input) => {
     return new Promise((resolve) => {
-        puppeteer.launch({ headless: "new", executablePath: executablePath()
+        puppeteer.launch({ headless: false, executablePath: executablePath()
       }).then(async browser => {
             const page = await browser.newPage()
              await page.setViewport({
@@ -28,12 +28,8 @@ const chat = async (input) => {
             await page.type("textarea", input);
             await page.keyboard.press("Enter");
             await page.waitForSelector(".h-4.w-4.mr-1", {visible: true});
-            const response = await page.$$eval("div.flex.flex-grow.flex-col.gap-3 > div > div > p", (response) => {
-                let res = []
-                for (p of response) {
-                  res.push(p.textContent);
-                }
-                return res.join("\n");
+            const response = await page.$eval("div.flex.flex-grow.flex-col.gap-3 > div > div", (response) => {
+                return response.innerText;
               })
             await browser.close();
             resolve(response); 
