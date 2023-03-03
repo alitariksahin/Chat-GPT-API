@@ -1,7 +1,7 @@
 # Chat-GPT-API
 <h2> How to setup </h2>
 <ul>
-<li> Fork repository and make a pull request. </li>
+<li> Clone the repository. </li>
 <li> Open command line in the current directory. </li>
 <li> Type <code> npm install </code> and wait for npm to install dependencies. </li>
 <li> Type <code> npm start </code> whenever you want to run the code. </li>
